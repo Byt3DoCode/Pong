@@ -65,7 +65,6 @@ def display_page(Page):
 selected = 0
 sound = True
 page = 1
-game_mode = 1
 
 
 # --------------------------------------------------------------------------------------------------------------------
@@ -102,9 +101,9 @@ def ball_animation():
             ball_speed_x *= -1
             ball_speed_y = random.randint(2, 8) * random.choice((1, -1))
         elif abs(ball.bottom - player.top) < 10 and ball_speed_y > 0:
-            ball_speed_y = random.randint(2, 8) * random.choice((1, -1))
+            ball_speed_y = random.randint(2, 8) * -1
         elif abs(ball.top - player.bottom) < 10 and ball_speed_y < 0:
-            ball_speed_y = random.randint(2, 8) * random.choice((1, -1))
+            ball_speed_y = random.randint(2, 8)
 
     if ball.colliderect(opponent) and ball_speed_x < 0:
         play_sound(plob_sound)
@@ -112,9 +111,9 @@ def ball_animation():
             ball_speed_x *= -1
             ball_speed_y = random.randint(2, 8) * random.choice((1, -1))
         elif abs(ball.bottom - opponent.top) < 10 and ball_speed_y > 0:
-            ball_speed_y = random.randint(2, 8) * random.choice((1, -1))
+            ball_speed_y = random.randint(2, 8) * -1
         elif abs(ball.top - opponent.bottom) < 10 and ball_speed_y < 0:
-            ball_speed_y = random.randint(2, 8) * random.choice((1, -1))
+            ball_speed_y = random.randint(2, 8)
 
 
 def player_animation():
@@ -199,7 +198,7 @@ score_time = 0
 game_end = False
 player_score = 0
 opponent_score = 0
-winning_score = 2
+winning_score = 5
 
 
 # --------------------------------------------------------------------------------------------------------------------
